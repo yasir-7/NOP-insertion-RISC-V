@@ -1,0 +1,42 @@
+NO FORWARDING -
+
+addi x30, x30, 1
+add x20, x20, x0
+NOP
+NOP
+addi x20, x20, 1
+sd x1, 0(sp)
+addi x10, x10, -1
+ld x10, 8(sp)
+NOP
+NOP
+addi x10, x10, -2
+addi x2, sp, -16
+NOP
+NOP
+sd x10, 8(sp)
+ld x1, 0(sp)
+ld x10, 8(x2)
+addi x10, x0, 11
+addi sp, sp, 16
+
+Total: 23 cycles
+
+FORWARDING
+
+addi x30, x30, 1
+add x20, x20, x0
+addi x20, x20, 1
+sd x1, 0(sp)
+addi x10, x10, -1
+ld x10, 8(sp)
+NOP
+addi x10, x10, -2
+addi x2, sp, -16
+sd x10, 8(sp)
+ld x1, 0(sp)
+ld x10, 8(x2)
+addi x10, x0, 11
+addi sp, sp, 16
+
+Total: 18 cycles
